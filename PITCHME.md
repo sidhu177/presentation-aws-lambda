@@ -31,7 +31,7 @@ AWS Lambda is an event driven purely compute resource that allows users to deplo
 
 ### Dashboard 
 In this talk we will be using the Dahsboard to launch the Lambda function
-(https://github.com/sidhu177/presentation-aws-lambda/blob/master/assets/image/Lambda_Dashboard.JPG)
+![Dashboard](https://github.com/sidhu177/presentation-aws-lambda/blob/master/assets/image/Lambda_Dashboard.JPG)
 
 ---
 
