@@ -41,10 +41,10 @@ One of the many advantages of Lambda is ease of wiring it with services like Clo
 
 ### Example 1
 The main function with Lambda in python looks like this
-<pre class="devsite-terminal devsite-click-to-copy">
+```
 def handler(event,context):
     return "What's Up!"
-</pre>
+```
 
 Here *handler* is the name of the function, event and context are the default parameters passed to the function with return being the output
 
