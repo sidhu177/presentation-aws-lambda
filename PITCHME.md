@@ -1,4 +1,4 @@
-# Using AWS Lambda
+# Intro to AWS Lambda
 
 NoVaLUG Meetup
 
