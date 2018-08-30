@@ -4,7 +4,7 @@
 # For details, visit Wiki:
 # https://github.com/gitpitch/gitpitch/wiki/Slideshow-Settings
 #
-theme : sky
+theme : moon
 theme-override : assets/css/PITCHME.css
 highlight : atom-one-light
 logo : assets/image/NoVaLUG.png
