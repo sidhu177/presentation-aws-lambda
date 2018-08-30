@@ -33,14 +33,32 @@ AWS Lambda is an event driven purely compute resource that allows users to deplo
 In this talk we will be using the Dahsboard to launch the Lambda function
 ![Dashboard](assets/image/Lambda_Dashboard.JPG)
 
++++ 
+
+To launch a lambda function you have 3 options 
+* start from scratch
+* use a readymade blueprint
+* use a repo that AWS offers
+
++++ 
+
+Lets choose start from scratch for a quick example
+
++++
+
+you will need to 
+ - name your function
+ - choose the language 
+ - choose a role
+
++++
+
+Next is the Lambda console. Notice that you have an embedded code editor. Thats the cloud9 integration right in your browser that allows you to edit code and run realtime. 
+*fun fact: its powered by linux*
+
 ---
 
-### Event Trigger
-One of the many advantages of Lambda is ease of wiring it with services like Cloudwatch, S3 and others which serve as the input for the function. So we are essentially putting lego pieces together
-
----
-
-### Example 1
+### Go Run
 The main function with Lambda in python looks like this
 ```
 def handler(event,context):
@@ -48,6 +66,11 @@ def handler(event,context):
 ```
 
 Here *handler* is the name of the function, event and context are the default parameters passed to the function with return being the output
+
+---
+
+### Event Trigger
+One of the many advantages of Lambda is ease of wiring it with services like Cloudwatch, S3 and others which serve as the input for the function. So we are essentially putting lego pieces together
 
 ---
 
