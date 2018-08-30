@@ -53,7 +53,10 @@ you will need to
 
 +++
 
-Next is the Lambda console. Notice that you have an embedded code editor. Thats the cloud9 integration right in your browser that allows you to edit code and run realtime. 
+Next is the Lambda console. Notice that you have an embedded code editor. 
+
+Thats the cloud9 integration right in your browser that allows you to edit code and run realtime. 
+
 *fun fact: its powered by linux*
 
 ---
