@@ -63,9 +63,9 @@ By default, Lambda is going to log any function you run. You can customize the l
 ---
 
 ### Limitations
-1) Its important to note that AWS Lambda is not for managing underlying resources.
-2) Retries happen when functions fail. Functions fail if it maxes out on provided time or if the input is wrong or unparseble and other contraints
-3) scope of the functions should be self contained and stateless
+ - Its important to note that AWS Lambda is not for managing underlying resources.
+ - Retries happen when functions fail. Functions fail if it maxes out on provided time or if the input is wrong or unparseble and other contraints
+ - scope of the functions should be self contained and stateless
 
 ---
 
