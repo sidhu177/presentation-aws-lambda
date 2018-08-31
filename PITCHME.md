@@ -68,8 +68,32 @@ def handler(event,context):
     return "What's Up!"
 ```
 
-Here *handler* is the name of the function, event and context are the default parameters passed to the function with return being the output
+Here *handler* is the name of the function, event and context are the default parameters that have to be passed to the function with return being the output
 
++++
+
+*event* is usually used to pass in triggers from other services
+
+*context* is used to get the remaining time information
+
++++
+
+Logging and Exceptions are handled through cloud watch logs. You will see the exception used for the failure displayed on the console
+
++++
+
+Now for a small example demonstrating the use of lambda console and the levers that we can use to make changes to lambda runtime.
+
++++
+
+`def lambda_handler(event,context):
+    calc = 2**3**2
+    print(calc)
+    print("Remaining Time in MilliSeconds: " + str(context.get_remaining_time_in_millis()))
+    print("This is the RequestID: " + str(context.aws_request_id))
+    return "End of Lambda Function"
+    `
+    
 ---
 
 ### Event Trigger
