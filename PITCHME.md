@@ -44,8 +44,6 @@ To launch a lambda function you have 3 options
 
 Lets choose start from scratch for a quick example
 
-+++
-
 you will need to 
  - name your function
  - choose the language 
@@ -62,6 +60,8 @@ Thats the cloud9 integration right in your browser that allows you to edit code 
 ---
 
 ### Go Run
+When running lambda you will need the name of the python file and the name of the function that you want to call defined in the console. 
+
 The main function with Lambda in python looks like this
 ```
 def handler(event,context):
@@ -78,13 +78,16 @@ Here *handler* is the name of the function, event and context are the default pa
 
 +++
 
-Logging and Exceptions are handled through cloud watch logs. You will see the exception used for the failure displayed on the console
+By default, Lambda is going to log any function you run. You can customize the log if you need more details.
+
+Logging and Exceptions are handled through cloud watch logs. You will see the exception used for the failure displayed on the console and on the log
 
 +++
 
 Now for a small example demonstrating the use of lambda console and the levers that we can use to make changes to lambda runtime.
 
 +++
+
 
 ```
 def lambda_handler(event,context):
@@ -100,16 +103,18 @@ def lambda_handler(event,context):
 ### Event Trigger
 One of the many advantages of Lambda is ease of wiring it with services like Cloudwatch, S3 and others which serve as the input for the function. So we are essentially putting lego pieces together
 
----
++++
 
-When running lambda you will need the name of the python file and the name of the function that you want to call defined in the console. 
+#### Different Call Types
+ - Asynchronous : Anytime you fire a function without an order and do not return an output
+ - Synchronous : When order of recieving the request and returning an output matter
+ - Push : Services connected to Lambda have the permission to input to Lambda
+ - Pull : Lambda has the permission to ask for data from other services like S3, cloudwatch
 
-By default, Lambda is going to log any function you run. You can customize the log if you need more details.
++++
 
----
-
-### Things to Keep Note
-*Cold Start* This is the phenomenon of the function taking a longer time when it initializes for the first run. Successive runs take much shorter time. Cold start times are different for various programming languages
+### Event Source Mapping
+Adding a trigger from the given list to your lambda function is in AWS Lingo "Event Source Mapping"
 
 ---
 
@@ -117,6 +122,11 @@ By default, Lambda is going to log any function you run. You can customize the l
  - Its important to note that AWS Lambda is not for managing underlying resources.
  - Retries happen when functions fail. Functions fail if it maxes out on provided time or if the input is wrong or unparseble and other contraints
  - scope of the functions should be self contained and stateless
+
++++
+
+### Things to Keep Note
+*Cold Start* This is the phenomenon of the function taking a longer time when it initializes for the first run. Successive runs take much shorter time. Cold start times are different for various programming languages
 
 ---
 
