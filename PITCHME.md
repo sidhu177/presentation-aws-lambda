@@ -27,6 +27,19 @@ In this talk we will be going through feature and functions of AWS Lambda. We wi
 ### Lambda 101
 AWS Lambda is an event driven purely compute resource that allows users to deploy code directly and not worry about infrastructure maintenance. Think of it as pushing just the python script as opposed to instantiating the EC2 and updating the OS, maintaining security patches, installing the language with dependant libraries and then running your code. Lambda does away with all of that. Just Fire and Forget.
 
++++
+
+### Departure from Previous Architectures
+
+With on demand serverless compute, Lambda is replacing EC2s in traditional architectures and is demonstrating performance all the while reducing cost.
+
++++
+
+### Cost Benefit
+ - Billed in milli seconds 
+ - steps in 100 milli seconds
+ - On demand run and scale as you go
+needless to say, lambda offers some impressive cost benefits that makes it hard to ignore
 ---
 
 ### Dashboard 
@@ -97,6 +110,13 @@ def lambda_handler(event,context):
     print("This is the RequestID: " + str(context.aws_request_id))
     return "End of Lambda Function"
 ```
++++
+
+Now lets look at the console, we have
+ - the return value
+ - the printed message
+ - the duration it took to run
+ - And max memory used
 
 ---
 
@@ -105,7 +125,7 @@ One of the many advantages of Lambda is ease of wiring it with services like Clo
 
 +++
 
-#### Different Call Types
+### Different Call Types
  - Asynchronous : Anytime you fire a function without an order and do not return an output
  - Synchronous : When order of recieving the request and returning an output matter
  - Push : Services connected to Lambda have the permission to input to Lambda
@@ -128,6 +148,10 @@ Adding a trigger from the given list to your lambda function is in AWS Lingo "Ev
 ### Things to Keep Note
 *Cold Start* This is the phenomenon of the function taking a longer time when it initializes for the first run. Successive runs take much shorter time. Cold start times are different for various programming languages
 
+---
+### Serverless Application Model
+
+The SAM example goes here
 ---
 
 ### Use Cases
