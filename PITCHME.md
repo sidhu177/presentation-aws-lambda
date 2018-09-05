@@ -85,7 +85,7 @@ Here *handler* is the name of the function, event and context are the default pa
 
 +++
 
-*event* is usually used to pass in triggers from other services
+*event* is usually used to pass in triggers from other services and has a JSON format
 
 *context* is used to get the remaining time information
 
@@ -97,10 +97,31 @@ Logging and Exceptions are handled through cloud watch logs. You will see the ex
 
 +++
 
-Now for a small example demonstrating the use of lambda console and the levers that we can use to make changes to lambda runtime.
+You can use environment variables to pass mannual data to your function
+
+```
+import json
+import os
+
+# val =  os.environ['Key1']
+
+def lambda_handler(event,context):
+    
+    print('message to be printed '+ event['message'])
+    # print(val)
+    return event['message']
+```
++++
+
+Now lets look at the console, we have
+ - the return value
+ - the printed message
+ - the duration it took to run
+ - And max memory used
 
 +++
 
+Now for an example on using the lambda console and the levers that we can use to make changes to lambda runtime.
 
 ```
 def lambda_handler(event,context):
@@ -112,16 +133,24 @@ def lambda_handler(event,context):
 ```
 +++
 
-Now lets look at the console, we have
- - the return value
- - the printed message
- - the duration it took to run
- - And max memory used
+Notice how the remaining time changes per each calculation, if the scope of your program requires more memory and running time to execute, you can do that in the *Basic Settings*
 
 ---
 
 ### Event Trigger
-One of the many advantages of Lambda is ease of wiring it with services like Cloudwatch, S3 and others which serve as the input for the function. So we are essentially putting lego pieces together
+One of the many advantages of Lambda is ease of wiring it with others services like
+
+ - API requests
+ - Cloudwatch events
+ - S3 
+ - other event triggers
+
+So we are essentially putting lego pieces together
+
++++
+
+### Configuring Triggers
+Configuring Triggers essentially consist of explicitly specifying a rule which has permissions if required to read data from other services
 
 +++
 
