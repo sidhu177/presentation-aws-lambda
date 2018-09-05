@@ -149,9 +149,14 @@ Adding a trigger from the given list to your lambda function is in AWS Lingo "Ev
 *Cold Start* This is the phenomenon of the function taking a longer time when it initializes for the first run. Successive runs take much shorter time. Cold start times are different for various programming languages
 
 ---
-### Serverless Application Model
+### Step Functions 
 
 The SAM example goes here
+
++++
+
+### Serverless Application Model
+
 ---
 
 ### Use Cases
