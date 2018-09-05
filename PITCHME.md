@@ -135,6 +135,22 @@ def lambda_handler(event,context):
 
 Notice how the remaining time changes per each calculation, if the scope of your program requires more memory and running time to execute, you can do that in the *Basic Settings*
 
++++
+### Dependant functions
+
+AWS does not provide all the libraries for the python language and if you have a specific and uncommon library that you use to call your function, chances are the import function in lambda will fail. 
+
+When using a depandant library in your code, you can upload a package that your function will call during execution and Lambda will have the libraries installed and ready 
+
++++
+### Versioning and Aliasing
+
+Another important tools in using Lambda are being able to Version your code and have Alias to your function. 
+ - $LATEST is the version that is mutable and will exist by default
+ - publishing a version creates an immutable numbered version
+ - Alias can be used to concurrent functions which can be used for splitting traffic
+ - With versioning, development is easier and if need be you can rollback to a previous workable code
+
 ---
 
 ### Event Trigger
@@ -178,13 +194,9 @@ Adding a trigger from the given list to your lambda function is in AWS Lingo "Ev
 *Cold Start* This is the phenomenon of the function taking a longer time when it initializes for the first run. Successive runs take much shorter time. Cold start times are different for various programming languages
 
 ---
-### Step Functions 
+### Serverless Application Model
 
 The SAM example goes here
-
-+++
-
-### Serverless Application Model
 
 ---
 
