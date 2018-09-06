@@ -121,7 +121,7 @@ Now lets look at the console, we have
 
 +++
 
-Now for an example on using the lambda console and the levers that we can use to make changes to lambda runtime.
+Now for an example on using the lambda console and the levers that we can use to make changes to lambda runtime. Below is an example on compute times.
 
 ```
 def lambda_handler(event,context):
