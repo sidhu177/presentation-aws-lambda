@@ -1,8 +1,10 @@
 # Intro to AWS Lambda
 
-NoVaLUG Meetup
+NoVaLUG Meetup 8th-Sept-2018
 
-8th-Sept-2018
+Sid Ramesh - Data Analyst
+
+Karsun Solutions
 
 [@sidhu177](https://twitter.com/sidhu177?lang=en) 
 
@@ -181,6 +183,56 @@ Configuring Triggers essentially consist of explicitly specifying a rule which h
 ### Event Source Mapping
 Adding a trigger from the given list to your lambda function is in AWS Lingo "Event Source Mapping"
 
++++
+### S3 to SNS Example
+Lets try putting what we went through into action. In this example we'll 
+ - create an S3 bucket and configure that with Lambda function. 
+ - Then we will upload an object to the bucket and use the monitoring tab to look at the result. 
+ - And then we will configure it with an SNS topic that will send a text message conveying the result.
+
++++
+
+```
+import json
+import boto3
+import os
+
+print("starting invocation")
+
+def lambda_handler(event, context):
+
+    bucket = event['Records'][0]['s3']['bucket']['name']
+    print(bucket)
+    sns.publish(
+        Message=('New object has been uploaded to your S3: '+ str(bucket)), 
+        PhoneNumber='+123456789'
+)
+```
++++
+Test JSON
+
+```
+{
+  "Records": [
+      "s3": {
+        "configurationId": "testConfigRule",
+        "object": {
+          "eTag": "0123456789abcdef0123456789abcdef",
+          "sequencer": "0A1B2C3D4E5F678901",
+          "key": "HappyFace.jpg",
+          "size": 1024
+        },
+        "bucket": {
+          "arn": "arn:aws:s3:::mybucket",
+          "name": "sourcebucket",
+          "ownerIdentity": {
+            "principalId": "EXAMPLE"
+          }
+        },
+  ]
+}
+```
+
 ---
 
 ### Limitations
@@ -192,6 +244,10 @@ Adding a trigger from the given list to your lambda function is in AWS Lingo "Ev
 
 ### Things to Keep Note
 *Cold Start* This is the phenomenon of the function taking a longer time when it initializes for the first run. Successive runs take much shorter time. Cold start times are different for various programming languages
+Max memory: 3000MB
+Max Time: 300 Seconds
+Max Default Concurrency: 1000
+Functions should be stateless and scope-limited
 
 ---
 ### Serverless Application Model
@@ -201,7 +257,10 @@ The SAM example goes here
 ---
 
 ### Use Cases
-Now, where can lambda be used. One example of using Lambda is in ETL.
+Lambda has found real world use cases in a lot of places. some known examples are:
+- One example of using Lambda is in ETL.
+- its used as infrastructure as code 
+- its also used for standalone application
 
 ---
 
