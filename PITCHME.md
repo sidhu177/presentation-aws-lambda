@@ -237,7 +237,22 @@ Test JSON
   ]
 }
 ```
++++
 
+### Lambda for Deployment
+
+Lambda can also be used to deploy, with the right roles and permissions, you can use lambda to deploy EC2s and other AWS resources.
+
+```
+def lambda_handler(event, context):
+    instance = EC2.run_instances(
+        ImageId=AMI,
+        InstanceType=INSTANCE_TYPE,
+        MinCount=1, # required by boto, even though it's kinda obvious.
+        MaxCount=1,
+        InstanceInitiatedShutdownBehavior='terminate', # make shutdown in script terminate ec2
+    )
+```
 ---
 
 ### Limitations
@@ -276,3 +291,4 @@ Lambda has found real world use cases in a lot of places. some known examples ar
 4) [Safari - Building Serverless Applications with Python](https://www.packtpub.com/application-development/building-serverless-applications-python)
 5) [nice web resource](https://wilsonmar.github.io/aws-lambda/)
 6) [lambda cheat sheet](https://github.com/srcecde/aws-lambda-cheatsheet)
+7) [EC2 Deploy using Lambda](https://medium.com/tomincode/launching-ec2-instances-from-lambda-4a96f1264afb)
