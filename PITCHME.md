@@ -184,6 +184,11 @@ Configuring Triggers essentially consist of explicitly specifying a rule which h
 Adding a trigger from the given list to your lambda function is in AWS Lingo "Event Source Mapping"
 
 +++
+### Blueprints
+
+Perviously we looked at the author from scratch way for creating lambda. AWS also provides wide array of Blueprints that come with batteries included. You can use blueprints to do just about most of the functions. 
+
++++
 ### S3 to SNS Example
 Lets try putting what we went through into action. In this example we'll 
  - create an S3 bucket and configure that with Lambda function. 
@@ -270,3 +275,4 @@ Lambda has found real world use cases in a lot of places. some known examples ar
 3) [Lynda - Learning AWS Lambda](https://www.lynda.com/)
 4) [Safari - Building Serverless Applications with Python](https://www.packtpub.com/application-development/building-serverless-applications-python)
 5) [nice web resource](https://wilsonmar.github.io/aws-lambda/)
+6) [lambda cheat sheet](https://github.com/srcecde/aws-lambda-cheatsheet)
