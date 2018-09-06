@@ -243,11 +243,11 @@ Test JSON
 +++
 
 ### Things to Keep Note
-*Cold Start* This is the phenomenon of the function taking a longer time when it initializes for the first run. Successive runs take much shorter time. Cold start times are different for various programming languages
-Max memory: 3000MB
-Max Time: 300 Seconds
-Max Default Concurrency: 1000
-Functions should be stateless and scope-limited
+- *Cold Start* This is the phenomenon of the function taking a longer time when it initializes for the first run. Successive runs take much shorter time. Cold start times are different for various programming languages
+- Max memory: 3000MB
+- Max Time: 300 Seconds
+- Max Default Concurrency: 1000
+- Functions should be stateless and scope-limited
 
 ---
 ### Serverless Application Model
@@ -266,3 +266,7 @@ Lambda has found real world use cases in a lot of places. some known examples ar
 
 ### Resources
 1) [AWS Lambda](https://docs.aws.amazon.com/lambda/latest/dg/welcome.html)
+2) [linuxacademy - Certified Dev 2018](https://linuxacademy.com/)
+3) [Lynda - Learning AWS Lambda](https://www.lynda.com/)
+4) [Safari - Building Serverless Applications with Python](https://www.packtpub.com/application-development/building-serverless-applications-python)
+5) [nice web resource](https://wilsonmar.github.io/aws-lambda/)
