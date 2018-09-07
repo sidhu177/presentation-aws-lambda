@@ -17,16 +17,22 @@ sudo systemctl start httpd.service
 
 def lambda_handler(event, context):
 
-    instance = EC2.run_instances(
-        ImageId=AMI, # Passing Red Hat image
-        InstanceType=INSTANCE_TYPE, # Passing t2 Micro
-        MinCount=1, # required by boto
-        MaxCount=1, # required by boto
-        InstanceInitiatedShutdownBehavior='terminate', # Shutdown Behaviour
-        KeyName = EC2Key, # Key Pair
-        SecurityGroupIds = [SG], # Default Security Group
-        UserData=init_script  # running the install commands
-    )
+ 
+def lambda_handler(event, context):
+    
+    state = event['detail']['state']
+    
+    if state == ['terminated']:
+       instance = EC2.run_instances(
+           ImageId=AMI,
+           InstanceType=INSTANCE_TYPE,
+           MinCount=1, # required by boto, even though it's kinda obvious.
+           MaxCount=1,
+           InstanceInitiatedShutdownBehavior='terminate', # make shutdown in script terminate ec2
+           KeyName = EC2Key,
+           SecurityGroupIds = [SG],
+           UserData=init_script 
+        )
 
     print("New instance created.")
     instance_id = instance['Instances'][0]['InstanceId']
