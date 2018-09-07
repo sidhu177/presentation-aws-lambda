@@ -27,7 +27,11 @@ In this talk we will be going through feature and functions of AWS Lambda. We wi
 ---
 
 ### Lambda 101
-AWS Lambda is an event driven purely compute resource that allows users to deploy code directly and not worry about infrastructure maintenance. Think of it as pushing just the python script as opposed to instantiating the EC2 and updating the OS, maintaining security patches, installing the language with dependant libraries and then running your code. Lambda does away with all of that. Just Fire and Forget.
+AWS Lambda is an event driven purely compute resource that allows users to deploy code directly and not worry about infrastructure maintenance. 
+
+Lambda is an Example of Function-as-a-service model and is related to the other serverless offerings like google functions, kubeless and azure functions. 
+
+Think of it as pushing just the python script as opposed to instantiating the EC2 and updating the OS, maintaining security patches, installing the language with dependant libraries and then running your code. Lambda does away with all of that. Just Fire and Forget.
 
 +++
 
@@ -285,10 +289,10 @@ Lambda has found real world use cases in a lot of places. some known examples ar
 ---
 
 ### Resources
-1) [AWS Lambda](https://docs.aws.amazon.com/lambda/latest/dg/welcome.html)
-2) [linuxacademy - Certified Dev 2018](https://linuxacademy.com/)
-3) [Lynda - Learning AWS Lambda](https://www.lynda.com/)
-4) [Safari - Building Serverless Applications with Python](https://www.packtpub.com/application-development/building-serverless-applications-python)
-5) [nice web resource](https://wilsonmar.github.io/aws-lambda/)
-6) [lambda cheat sheet](https://github.com/srcecde/aws-lambda-cheatsheet)
-7) [EC2 Deploy using Lambda](https://medium.com/tomincode/launching-ec2-instances-from-lambda-4a96f1264afb)
+- [AWS Lambda](https://docs.aws.amazon.com/lambda/latest/dg/welcome.html)
+- [linuxacademy - Certified Dev 2018](https://linuxacademy.com/)
+- [Lynda - Learning AWS Lambda](https://www.lynda.com/)
+- [Safari - Building Serverless Applications with Python](https://www.packtpub.com/application-development/building-serverless-applications-python)
+- [nice web resource](https://wilsonmar.github.io/aws-lambda/)
+- [lambda cheat sheet](https://github.com/srcecde/aws-lambda-cheatsheet)
+- [EC2 Deploy using Lambda](https://medium.com/tomincode/launching-ec2-instances-from-lambda-4a96f1264afb)
