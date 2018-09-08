@@ -29,7 +29,7 @@ In this talk we will be going through feature and functions of AWS Lambda. We wi
 ### Lambda 101
 AWS Lambda is an event driven purely compute resource that allows users to deploy code directly and not worry about infrastructure maintenance. 
 
-Lambda is an Example of Function-as-a-service model and is related to the other serverless offerings like google functions, kubeless and azure functions. 
+Lambda is an Example of Function-as-a-service model and is related to the other serverless offerings like google functions, kubeless, webtask.io, [iron.io](http://open.iron.io/) and azure functions. 
 
 Think of it as pushing just the python script as opposed to instantiating the EC2 and updating the OS, maintaining security patches, installing the language with dependant libraries and then running your code. Lambda does away with all of that. Just Fire and Forget.
 
@@ -46,6 +46,7 @@ With on demand serverless compute, Lambda is replacing EC2s in traditional archi
  - steps in 100 milli seconds
  - On demand run and scale as you go
 needless to say, lambda offers some impressive cost benefits that makes it hard to ignore
+
 ---
 
 ### Dashboard 
@@ -127,7 +128,7 @@ Now lets look at the console, we have
 
 +++
 
-Now for an example on using the lambda console and the levers that we can use to make changes to lambda runtime. Below is an example on compute times.
+Now for an example on using the lambda console and the levers that we can use to make changes to lambda runtime. Below is an example on compute times. Lambda will be required to calculate *n* to the power of *m* to the power of *o*
 
 ```
 def lambda_handler(event,context):
@@ -142,7 +143,7 @@ def lambda_handler(event,context):
 Notice how the remaining time changes per each calculation, if the scope of your program requires more memory and running time to execute, you can do that in the *Basic Settings*
 
 +++
-### Dependant functions
+### Deploying packages
 
 AWS does not provide all the libraries for the python language and if you have a specific and uncommon library that you use to call your function, chances are the import function in lambda will fail. 
 
@@ -257,12 +258,13 @@ def lambda_handler(event, context):
         InstanceInitiatedShutdownBehavior='terminate', # make shutdown in script terminate ec2
     )
 ```
+
 ---
 
 ### Limitations
- - Its important to note that AWS Lambda is not for managing underlying resources.
- - Retries happen when functions fail. Functions fail if it maxes out on provided time or if the input is wrong or unparseble and other contraints
+ - Time limit of the function
  - scope of the functions should be self contained and stateless
+ - Monitoring underlying container and data flow
 
 +++
 
@@ -276,15 +278,18 @@ def lambda_handler(event, context):
 ---
 ### Serverless Application Model
 
-The SAM example goes here
+- AWS SAM is Amazon's answer to the serverless phenomenon
+- Serverless could be thought of as an abstraction to cloudformation and SAM is AWS's  
 
 ---
 
 ### Use Cases
 Lambda has found real world use cases in a lot of places. some known examples are:
 - One example of using Lambda is in ETL.
-- its used as infrastructure as code 
-- its also used for standalone application
+- its also used as infrastructure as code like creating instances is terminated
+- taking snapshots of EBS volumes
+- deleting snapshots on schedule
+- it could also be used as a standalone application
 
 ---
 
