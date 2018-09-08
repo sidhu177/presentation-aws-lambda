@@ -69,6 +69,8 @@ you will need to
  - choose the language 
  - choose a role
 
+The road to Lambda goes through IAM. Unless you have the proper roles and permissions, your function will not be able to connect to resources and execute 
+
 +++
 
 Next is the Lambda console. Notice that you have an embedded code editor. 
@@ -287,7 +289,7 @@ def lambda_handler(event, context):
 ### Use Cases
 Lambda has found real world use cases in a lot of places. some known examples are:
 - One example of using Lambda is in ETL.
-- its also used as infrastructure as code like creating instances is terminated
+- its is used in infrastructure as code type usage(AWS SAM)
 - taking snapshots of EBS volumes
 - deleting snapshots on schedule
 - it could also be used as a standalone application
