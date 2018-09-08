@@ -29,7 +29,7 @@ In this talk we will be going through feature and functions of AWS Lambda. We wi
 ### Lambda 101
 AWS Lambda is an event driven purely compute resource that allows users to deploy code directly and not worry about infrastructure maintenance. 
 
-Lambda is an Example of Function-as-a-service model and is related to the other serverless offerings like google functions, kubeless, webtask.io, [iron.io](http://open.iron.io/) and azure functions. 
+Lambda is an Example of Function-as-a-service model and is related to the other [serverles](https://github.com/serverless/serverless) offerings like google functions, kubeless, webtask.io, iron.io and azure functions. 
 
 Think of it as pushing just the python script as opposed to instantiating the EC2 and updating the OS, maintaining security patches, installing the language with dependant libraries and then running your code. Lambda does away with all of that. Just Fire and Forget.
 
@@ -279,7 +279,7 @@ def lambda_handler(event, context):
 ### Serverless Application Model
 
 - AWS SAM is Amazon's answer to the serverless phenomenon
-- Serverless could be thought of as an abstraction to cloudformation and SAM is AWS's  
+- Serverless makes it easier to write event driven functions and SAM is AWS's abstraction over cloudformation
 
 ---
 
