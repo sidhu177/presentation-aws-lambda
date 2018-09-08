@@ -189,8 +189,8 @@ Configuring Triggers essentially consist of explicitly specifying a rule which h
 +++
 
 ### Different Call Types
- - Asynchronous : Anytime you fire a function without an order and do not return an output
- - Synchronous : When order of recieving the request and returning an output matter
+ - Asynchronous : Anytime you fire a function without an order and the output returned does is not fed into another function
+ - Synchronous : When order of firing and recieving the function and its output matter
  - Push : Services connected to Lambda have the permission to input to Lambda
  - Pull : Lambda has the permission to ask for data from other services like S3, cloudwatch
 
