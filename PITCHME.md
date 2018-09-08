@@ -22,7 +22,7 @@ Karsun Solutions
 ---
 
 ### Intro to AWS Lambda
-In this talk we will be going through feature and functions of AWS Lambda. We will be looking at how to get started , the use cases and some examples using Python 3.5 programming language.
+In this talk we will be going through feature and functions of AWS Lambda. We will be looking at how to get started , the use cases and some examples using Python 3.6 programming language.
 
 ---
 
@@ -278,6 +278,7 @@ def lambda_handler(event, context):
 ---
 ### Serverless Application Model
 
+- SAM is all about infrastructure as code
 - AWS SAM is Amazon's answer to the serverless phenomenon
 - Serverless makes it easier to write event driven functions and SAM is AWS's abstraction over cloudformation
 
