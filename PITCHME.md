@@ -55,6 +55,13 @@ In this talk we will be using the Dahsboard to launch the Lambda function
 
 +++ 
 
+### The CLI Option
+
+Almost all the things you can do through the dashboard you could do using the AWS CLI. Although for this presentation, we will only be using the dashboard to interact with Lambda.
+- the biggest advantage of using CLI is that you can programmatically automate Lambda deployment 
+
++++
+
 To launch a lambda function you have 3 options 
 * start from scratch
 * use a readymade blueprint
@@ -278,6 +285,14 @@ def lambda_handler(event, context):
 - Functions should be stateless and scope-limited
 
 ---
+
+### Security
+You can use the VPC control on the Lambda console to restrict the access to your function. 
+- you would need to define the VPC, define the subnet
+- you could use STS for secure access
+
++++
+
 ### Serverless Application Model
 
 - SAM is all about infrastructure as code
