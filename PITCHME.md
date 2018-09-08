@@ -137,7 +137,8 @@ Now lets look at the console, we have
 
 +++
 
-Now for an example on using the lambda console and the levers that we can use to make changes to lambda runtime. Below is an example on compute times. Lambda will be required to calculate *n* to the power of *m* to the power of *o* ![exp](assets/image/power.png)
+Now for an example on using the lambda console and the levers that we can use to make changes to lambda runtime. Below is an example on compute times. Lambda will be required to calculate *n* to the power of *m* to the power of *o* 
+![exp](assets/image/power.png)
 
 ```
 def lambda_handler(event,context):
