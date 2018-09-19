@@ -42,7 +42,7 @@ With on demand serverless compute, Lambda is replacing EC2s in traditional archi
 +++
 
 ### Cost Benefit
- - Billed in milli seconds AKA 0.000001 Second
+ - Billed in milli seconds AKA 0.001 Second
  - steps in 100 milli seconds
  - On demand run and scale as you go
 needless to say, lambda offers some impressive cost benefits that makes it hard to ignore
