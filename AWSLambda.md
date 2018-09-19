@@ -27,10 +27,10 @@ One of the many advantages of Lambda is ease of wiring it with services like Clo
 
 ## Example 1
 The main function with Lambda in python looks like this
-<pre class="devsite-terminal devsite-click-to-copy">
+```
 def handler(event,context):
     return "What's Up!"
-</pre>
+```
 
 Here *handler* is the name of the function, event and context are the default parameters passed to the function with return being the output
 
@@ -42,9 +42,7 @@ By default, Lambda is going to log any function you run. You can customize the l
 *Cold Start* This is the phenomenon of the function taking a longer time when it initializes for the first run. Successive runs take much shorter time. Cold start times are different for various programming languages
 
 ## Limitations
-1) Its important to note that AWS Lambda is not for managing underlying resources.
-2) Retries happen when functions fail. Functions fail if it maxes out on provided time or if the input is wrong or unparseble and other contraints
-3) scope of the functions should be self contained and stateless
+1) scope of the functions should be self contained and stateless
 
 ## Use Cases
 Now, where can lambda be used. One example of using Lambda is in ETL. A common and often necessary activity in entreprises is to be able to load data from databases to datawarehouses on a daily basis. This is done through the Extract Transform and Load routine. The code written to do this connects to the source database, takes all the records entered for that day , transforms the schema to match the target database and loads into the respective tables. AWS Redshift is a datawarehouse commonly used in cloud architectures to store data. Data is extracted from source databases like MongoDB and is stored in S3 as a flat file also called a text file which triggers a EC2 containing the ETL code to load the data into redshift. 
